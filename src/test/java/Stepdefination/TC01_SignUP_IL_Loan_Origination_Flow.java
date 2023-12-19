@@ -3,7 +3,6 @@ package Stepdefination;
 import org.testng.annotations.Test;
 
 import PageObject.Page_004_DashBoardPage;
-import PageObject.Page_005_WelcomePage;
 import PageObject.Page_001_HomePage;
 import PageObject.Page_002_SignInPage;
 import PageObject.Page_003_SignUpPage;
@@ -35,13 +34,16 @@ public class TC01_SignUP_IL_Loan_Origination_Flow extends BaseClass {
 		SignUpPageObject.click_On_Create_Btn();
 		
 		DashBoardObject = new Page_004_DashBoardPage(driver);
-		DashBoardObject.select_Installment_Loan();
+		DashBoardObject.click_On_SignOut();
 		
-		wellComeObject = new Page_005_WelcomePage(driver);
-		wellComeObject.select_Province();
-		wellComeObject.enter_Address();
-		wellComeObject.select_Rent();
-		wellComeObject.click_On_CheckBox();
+		
+//		DashBoardObject.select_Installment_Loan();
+//		
+//		wellComeObject = new Page_005_WelcomePage(driver);
+//		wellComeObject.select_Province();
+//		wellComeObject.enter_Address();
+//		wellComeObject.select_Rent();
+//		wellComeObject.click_On_CheckBox();
 		
 		
 		

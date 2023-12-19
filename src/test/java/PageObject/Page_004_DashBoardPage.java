@@ -1,11 +1,8 @@
 package PageObject;
 
 import java.io.IOException;
-
-import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
@@ -43,40 +40,27 @@ public class Page_004_DashBoardPage extends AbstractClass {
 
 		waitForElementToBeVisible(signOut, "signOut");
 
-		JavascriptExecutor j = (JavascriptExecutor) driver;
-		j.executeScript("arguments[0].click();", signOut);
+//		JavascriptExecutor j = (JavascriptExecutor) driver;
+//		j.executeScript("arguments[0].click();", signOut);
 
-//		signOut.click();
+		signOut.click();
 	}
 
 	public void select_Installment_Loan() throws IOException, InterruptedException {
 
-//		Thread.sleep(10000);
+		waitForElementToBeVisible(Installment, "Installment");
 
-//		waitWebElementToInvisable(loader, "loader");
-
-//		waitForElementToBeVisible(Installment, "Installment");
-
-		waitForElementToBeClickable(Installment, "Apply Installment loan");
-//		Installment.click();
-		
-		Thread.sleep(2000);
-		
-		Actions act = new Actions(driver);
-		
-		
+		Thread.sleep(5000);
 		
 		click(Installment, "Select Installment Loan");
 	}
 
 	public void select_Cash_Advance() throws IOException {
-		
+
 		waitForElementToBeVisible(cashAdvance, "cashAdvance");
 
-//		cashAdvance.click();
 
 		click(cashAdvance, "Select Cash Advance Loan");
-
 	}
 
 }

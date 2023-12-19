@@ -5,9 +5,10 @@ import org.testng.annotations.Test;
 import PageObject.Page_004_DashBoardPage;
 import PageObject.Page_005_WelcomePage;
 import PageObject.Page_007_Verify_Your_Income_Page;
+import PageObject.Page_008_EmployerInformation;
+import PageObject.Page_009_Picra_Screen;
 import PageObject.Page_001_HomePage;
 import PageObject.Page_002_SignInPage;
-import PageObject.Page_003_SignUpPage;
 import Utilities.BaseClass;
 
 public class TC02_SignIn_With_exsiting_Customer extends BaseClass {
@@ -36,6 +37,13 @@ public class TC02_SignIn_With_exsiting_Customer extends BaseClass {
 		
 		IncomePageObject = new Page_007_Verify_Your_Income_Page(driver);
 		IncomePageObject.select_Flinks_Income();
+		
+		EmployerInformationOObject = new Page_008_EmployerInformation(driver);
+//		EmployerInformationOObject.employer_Phone();
+		EmployerInformationOObject.click_On_Continue();
+		
+		Picra_Screen_Page_Object = new Page_009_Picra_Screen(driver);
+		Picra_Screen_Page_Object.Select_Check_Box_And_Agree_Btn_On_Picra_Screen();
 		
 		
 	}

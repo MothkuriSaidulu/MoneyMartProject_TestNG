@@ -3,15 +3,12 @@ package PageObject;
 import java.io.IOException;
 import java.util.List;
 
-import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
-import org.openqa.selenium.support.How;
 import org.openqa.selenium.support.PageFactory;
-import org.testng.Assert;
 
 import Utilities.AbstractClass;
 
@@ -108,13 +105,15 @@ public class Page_005_WelcomePage extends AbstractClass {
 		waitForElementToBeClickable(currentAddress, "adress");
 
 		enterText(currentAddress, configAddress, "enter current address");
-		Thread.sleep(5000);
+		Thread.sleep(7000);
 
 		Actions act = new Actions(driver);
 		act.sendKeys(Keys.SPACE).perform();
+		
 		Thread.sleep(5000);
 
 		click(address1, "second adrees");
+		
 		Thread.sleep(5000);
 
 	}
@@ -146,6 +145,6 @@ public class Page_005_WelcomePage extends AbstractClass {
 	public void click_On_ContinueBtn() throws IOException {
 		waitForElementToBeVisible(continueBtn, "Click on continue button");
 		click(continueBtn, "user clcked on continue button");
-		
+
 	}
 }

@@ -1,10 +1,7 @@
 package PageObject;
 
 import java.io.IOException;
-import java.time.LocalDate;
 import java.util.List;
-
-import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -92,16 +89,16 @@ public class Page_003_SignUpPage extends AbstractClass {
 //		Assert.assertEquals(signUpText, "Sign up to Money Mart");
 		
 //		firstName_txt.sendKeys("jimm" + randomString());
-		enterText(firstName_txt, "jimm" + randomString(), "Enter First Name");
-//		firstName_txt.sendKeys("jimm");
+//		enterText(firstName_txt, "jimm" + randomString(), "Enter First Name");
+		firstName_txt.sendKeys("jimm");
 	}
 
 	public void send_Last_Name() {
 //		lastName_txt.sendKeys("mike" + randomString());
 
-		enterText(lastName_txt, "Mike" + randomString(), "Enter last Name");
+//		enterText(lastName_txt, "Mike" + randomString(), "Enter last Name");
 
-//		lastName_txt.sendKeys("mike");
+		lastName_txt.sendKeys("mike");
 
 	}
 
