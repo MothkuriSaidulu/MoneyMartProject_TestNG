@@ -2,16 +2,16 @@
 <testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2023-12-19T10:49:20 IST" name="Suite" finished-at="2023-12-19T10:51:00 IST" duration-ms="100042">
+  <suite started-at="2023-12-26T11:48:54 IST" name="Suite" finished-at="2023-12-26T11:50:43 IST" duration-ms="108958">
     <groups>
     </groups>
-    <test started-at="2023-12-19T10:49:20 IST" name="Test" finished-at="2023-12-19T10:51:00 IST" duration-ms="100042">
+    <test started-at="2023-12-26T11:48:54 IST" name="Test" finished-at="2023-12-26T11:50:43 IST" duration-ms="108958">
       <class name="Stepdefination.TC02_SignIn_With_exsiting_Customer">
-        <test-method is-config="true" signature="launchWebUrl()[pri:0, instance:Stepdefination.TC02_SignIn_With_exsiting_Customer@50f6ac94]" started-at="2023-12-19T10:49:20 IST" name="launchWebUrl" finished-at="2023-12-19T10:49:50 IST" duration-ms="29413" status="PASS">
+        <test-method is-config="true" signature="launchWebUrl()[pri:0, instance:Stepdefination.TC02_SignIn_With_exsiting_Customer@e3b3b2f]" started-at="2023-12-26T11:48:54 IST" name="launchWebUrl" finished-at="2023-12-26T11:49:28 IST" duration-ms="34182" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- launchWebUrl -->
-        <test-method signature="signInWithExsitingCustomer()[pri:0, instance:Stepdefination.TC02_SignIn_With_exsiting_Customer@50f6ac94]" started-at="2023-12-19T10:49:50 IST" name="signInWithExsitingCustomer" finished-at="2023-12-19T10:51:00 IST" duration-ms="70497" status="PASS">
+        <test-method signature="signInWithExsitingCustomer()[pri:0, instance:Stepdefination.TC02_SignIn_With_exsiting_Customer@e3b3b2f]" started-at="2023-12-26T11:49:28 IST" name="signInWithExsitingCustomer" finished-at="2023-12-26T11:50:43 IST" duration-ms="74645" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- signInWithExsitingCustomer -->

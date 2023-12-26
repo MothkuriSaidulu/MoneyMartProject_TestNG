@@ -40,10 +40,8 @@ public class Page_004_DashBoardPage extends AbstractClass {
 
 		waitForElementToBeVisible(signOut, "signOut");
 
-//		JavascriptExecutor j = (JavascriptExecutor) driver;
-//		j.executeScript("arguments[0].click();", signOut);
-
-		signOut.click();
+		click(signOut, "User Clicked On Sign Out Button");
+		
 	}
 
 	public void select_Installment_Loan() throws IOException, InterruptedException {

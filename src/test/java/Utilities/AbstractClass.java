@@ -19,6 +19,7 @@ import org.openqa.selenium.StaleElementReferenceException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebDriverException;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
@@ -34,7 +35,7 @@ public class AbstractClass {
 
 	public AbstractClass(WebDriver driver) {
 		this.driver = driver;
-//		PageFactory.initElements(driver, this);
+		PageFactory.initElements(driver, this);
 	}
 
 // Waits	
@@ -55,10 +56,6 @@ public class AbstractClass {
 	public static void waitForElementToBeVisible(WebElement locator, String elementDesc) throws IOException
 
 	{
-
-//		WebDriverWait wait = applyWebDriverWait();
-//
-//		wait.until(ExpectedConditions.visibilityOf(locator));
 
 		try {
 

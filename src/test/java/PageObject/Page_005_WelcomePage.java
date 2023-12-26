@@ -64,11 +64,10 @@ public class Page_005_WelcomePage extends AbstractClass {
 
 	public void select_Province() throws IOException, InterruptedException {
 
-		waitForElementToBeVisible(WelCome_txt, "welCome");
-		System.out.println(WelCome_txt.getText());
 		verifyText_For_PageCaption(WelCome_txt, "Welcome!", "Welcome!, Hence Passed");
 
 		click(ProvinceDropDown, "Click in select province drop down");
+
 		waitForElementToBeVisible(dropWindow, "Province list displaying");
 
 		for (int i = 0; i < ProvinceList.size(); i++) {
@@ -98,22 +97,18 @@ public class Page_005_WelcomePage extends AbstractClass {
 
 	public void enter_Address() throws IOException, InterruptedException {
 
-//		Thread.sleep(3000);
-
 		String configAddress = properties("Address");
-
-		waitForElementToBeClickable(currentAddress, "adress");
 
 		enterText(currentAddress, configAddress, "enter current address");
 		Thread.sleep(7000);
 
 		Actions act = new Actions(driver);
 		act.sendKeys(Keys.SPACE).perform();
-		
+
 		Thread.sleep(5000);
 
 		click(address1, "second adrees");
-		
+
 		Thread.sleep(5000);
 
 	}
@@ -133,17 +128,18 @@ public class Page_005_WelcomePage extends AbstractClass {
 
 	}
 
-	public void click_On_CheckBox() {
+	public void click_On_CheckBox() throws IOException {
 
 		if (!checkBox_One.isSelected()) {
-			checkBox_One.click();
-			checkBox_two.click();
+			click(checkBox_One, "Check Box One");
+			click(checkBox_two, "Check Box two");
+
 		}
 
 	}
 
 	public void click_On_ContinueBtn() throws IOException {
-		waitForElementToBeVisible(continueBtn, "Click on continue button");
+		
 		click(continueBtn, "user clcked on continue button");
 
 	}

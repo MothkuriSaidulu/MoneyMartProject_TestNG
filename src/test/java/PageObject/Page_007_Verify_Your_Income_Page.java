@@ -68,7 +68,6 @@ public class Page_007_Verify_Your_Income_Page extends AbstractClass {
 
 	public void select_Flinks_Income() throws IOException, InterruptedException {
 
-		waitForElementToBeVisible(page_caption, "wait for page verification");
 
 		verifyText_For_PageCaption(page_caption, "Verify Your Income", "verify User on  Verify Your Income page");
 

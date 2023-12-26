@@ -52,9 +52,7 @@ public class Page_001_HomePage extends AbstractClass {
 	
 	public void click_On_SignIn_SignUp() throws IOException {
 		
-		waitForElementToBeVisible(sign_in_signUp, "sign_in_signUp");
-		
-		
+		waitForElementToBeVisible(sign_in_signUp, "sign_in_signUp");	
 		
 		Assert.assertEquals(driver.getTitle(), "Quick Loans | Money Mart");
 		sign_in_signUp.click();

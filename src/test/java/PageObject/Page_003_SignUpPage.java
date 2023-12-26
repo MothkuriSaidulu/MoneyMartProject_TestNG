@@ -22,7 +22,7 @@ public class Page_003_SignUpPage extends AbstractClass {
 
 	@FindBy(xpath = "//h1[@class='mm-login-page__title']")
 	private WebElement signUpText;
-	
+
 	// Type 1
 	@FindBy(how = How.XPATH, using = "//input[@name='firstName']")
 	private WebElement firstName_txt;
@@ -79,18 +79,11 @@ public class Page_003_SignUpPage extends AbstractClass {
 
 	@FindBy(xpath = "//div[@class='mm-alert mm-alert--success']")
 	private WebElement successMessage;
-	
-	
-	
+
 // Actions
 	public void send_First_Name() throws IOException {
 
-//		String signUpText = driver.findElement(By.xpath("//h1[@class='mm-login-page__title']")).getText();
-//		Assert.assertEquals(signUpText, "Sign up to Money Mart");
-		
-//		firstName_txt.sendKeys("jimm" + randomString());
-//		enterText(firstName_txt, "jimm" + randomString(), "Enter First Name");
-		firstName_txt.sendKeys("jimm");
+		enterText(firstName_txt, "jimm", "User trying To Enter First Name");
 	}
 
 	public void send_Last_Name() {
@@ -103,9 +96,11 @@ public class Page_003_SignUpPage extends AbstractClass {
 	}
 
 	public void select_Date_Of_Birth() throws IOException, InterruptedException {
-	
-		DOB_btn.sendKeys(generateDynamicDOB());
-		
+
+//		DOB_btn.sendKeys(generateDynamicDOB());
+
+		enterText(DOB_btn, generateDynamicDOB(), "User Entering Date Of Birth");
+
 //		DOB_btn.click();
 //
 //		waitForElementToBeVisible(yearDropDown, "yearDropDown");
@@ -155,20 +150,16 @@ public class Page_003_SignUpPage extends AbstractClass {
 	}
 
 	public void send_Phone_Number() throws IOException {
-		waitForElementToBeVisible(phoneNumber_txt , "phoneNumber_txt");
-		phoneNumber_txt.sendKeys(randomPhoneNumber());
 
-//		Actions act = new Actions(driver);
-//		act.sendKeys(Keys.DOWN);
+		enterText(phoneNumber_txt, randomPhoneNumber(), "User Entering Phone Number");
+
 	}
 
-	public String send_Email_ID() {
+	public void send_Email_ID() {
 		String emailID = "Saida" + randomString() + "@yopmail.com";
 		System.out.println(emailID);
-		email_txt.sendKeys(emailID);
-//		SignInPage signObject = new SignInPage(driver);
-		return emailID;
-		
+		enterText(email_txt, emailID, "User Entered Email ID");
+
 	}
 
 	public void select_Security_Option() throws IOException {
@@ -189,35 +180,27 @@ public class Page_003_SignUpPage extends AbstractClass {
 	public void select_Security_Ans() throws IOException {
 
 		String configSelectSecurityAns = properties("SelectSecurityAns");
-		securityQuesAns.sendKeys(configSelectSecurityAns);
+		enterText(securityQuesAns, configSelectSecurityAns, "User Entering configSelectSecurityAns");
+
 	}
 
-	public String set_Password() {
+	public void set_Password() {
 		String password = "Chary@" + randomNumeric();
 		System.out.println(password);
-		newPassword_txt.sendKeys(password);
-		confirmPassword_txt.sendKeys(password);
-		return password;
+		enterText(newPassword_txt, password, "User Entering Password");
+		enterText(confirmPassword_txt, password, "User Entering Confirm passord");
 
 	}
 
 	public void click_On_Create_Btn() throws IOException, InterruptedException {
+
 		
-		CreateAccountBtn.click();
+		click(CreateAccountBtn, "User Clicking On Create Button");
 
 		Thread.sleep(10000);
-		
-//		WebElement loader = driver.findElement(By.xpath("//div[@class='mm-page-loader__wrapper']"));
-		
-//		waitWebElementToDissappear(loader);
 
-		
-		waitForElementToBeVisible(successMessage, "successMessage");
-		
-//		System.out.println(successMessage.getText());
-		
 		verifyText_For_PageCaption(successMessage, "Sign Up succeeded.", "Sign Up succeeded., hence Passed");
 		Thread.sleep(10000);
-		
+
 	}
 }

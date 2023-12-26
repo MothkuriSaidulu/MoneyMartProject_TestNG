@@ -52,7 +52,6 @@ public class Page_002_SignInPage extends AbstractClass {
 
 	public void send_EmailID() throws IOException {
 
-//		emailID.sendKeys(email);
 		String enailID = properties("EmailID");
 
 		enterText(emailID, enailID, "Enter Email ID");
@@ -61,8 +60,6 @@ public class Page_002_SignInPage extends AbstractClass {
 
 	public void send_Password() throws IOException {
 
-//		password.sendKeys(psd);	
-
 		String ConfigPassword = properties("Password");
 
 		enterText(password, ConfigPassword, "Enter Password");
@@ -70,9 +67,9 @@ public class Page_002_SignInPage extends AbstractClass {
 	}
 
 	public void click_On_SignIn_Btn() throws IOException {
-//		signInbtn.click();
+
 		click(signInbtn, "Click on Sign in button");
-		
+
 	}
 
 }
