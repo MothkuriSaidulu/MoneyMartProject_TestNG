@@ -24,7 +24,7 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 
-public class AbstractClass {
+public class AbstractClass extends BaseClass{
 
 	public static WebDriver driver;
 
@@ -33,12 +33,13 @@ public class AbstractClass {
 
 	public static final Logger logger = Logger.getLogger(AbstractClass.class.getName());
 
+	@SuppressWarnings("static-access")
 	public AbstractClass(WebDriver driver) {
 		this.driver = driver;
 		PageFactory.initElements(driver, this);
 	}
 
-// Waits	
+// explicity wait 
 
 	public static WebDriverWait applyWebDriverWait() {
 

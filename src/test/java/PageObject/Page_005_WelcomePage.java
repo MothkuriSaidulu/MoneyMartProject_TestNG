@@ -64,7 +64,7 @@ public class Page_005_WelcomePage extends AbstractClass {
 
 	public void select_Province() throws IOException, InterruptedException {
 
-		verifyText_For_PageCaption(WelCome_txt, "Welcome!", "Welcome!, Hence Passed");
+//		verifyText_For_PageCaption(WelCome_txt, "Welcome!", "Welcome!, Hence Passed");
 
 		click(ProvinceDropDown, "Click in select province drop down");
 

@@ -68,7 +68,6 @@ public class Page_007_Verify_Your_Income_Page extends AbstractClass {
 
 	public void select_Flinks_Income() throws IOException, InterruptedException {
 
-
 		verifyText_For_PageCaption(page_caption, "Verify Your Income", "verify User on  Verify Your Income page");
 
 		click(Flinks_income, "click on flinks");
@@ -88,11 +87,6 @@ public class Page_007_Verify_Your_Income_Page extends AbstractClass {
 		Thread.sleep(10000);
 
 		System.out.println("Print This Text after wait");
-		
-		
-	}
-
-	public void flinks_ifram_page() throws IOException {
 
 		driver.switchTo().frame(iframe);
 
@@ -109,16 +103,16 @@ public class Page_007_Verify_Your_Income_Page extends AbstractClass {
 		enterText(Flinks_Password, flinks_Password, "Enter Flinks Password");
 
 		click(contnue_button, "User Clicked on Continue button");
-		
+
 // Copy text
 		click(copy_button, "click on copy button");
 
 		click(Authentication_Question, "user clicked on Authentication Question");
-		
+
 // Paste text
 		Authentication_Question.sendKeys(Keys.CONTROL + "V");
 
 		click(contnue_button, "User Clicked on Continue button");
-
 	}
+
 }
