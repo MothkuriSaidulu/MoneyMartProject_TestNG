@@ -11,29 +11,29 @@ import com.aventstack.extentreports.Status;
 
 public class Listners extends BaseClass implements ITestListener {
 
-	ExtentReports extent =  ExtentReport.getExtentReport();
+	ExtentReports extent = ExtentReport.getExtentReport();
+
+	// Each Test report it will collect and push to report
 	ExtentTest test;
+	ThreadLocal<ExtentTest> extentThread = new ThreadLocal<ExtentTest>();
 
 	@Override
 	public void onTestStart(ITestResult result) {
-		// TODO Auto-generated method stub
-
 		test = extent.createTest(result.getMethod().getMethodName());
-
+		extentThread.set(test);
 	}
 
 	@Override
 	public void onTestSuccess(ITestResult result) {
 		// TODO Auto-generated method stub
-		test.log(Status.PASS, "This case is success");
+		extentThread.get().log(Status.PASS, "This case is success");
 
 	}
 
 	@Override
 	public void onTestFailure(ITestResult result) {
-		// TODO Auto-generated method stub
 
-		test.fail(result.getThrowable()); // it will print the error in report
+		extentThread.get().fail(result.getThrowable()); // it will print the error in report
 
 		try {
 			driver = (WebDriver) result.getTestClass().getRealClass().getField("driver").get(result.getInstance());
@@ -45,6 +45,22 @@ public class Listners extends BaseClass implements ITestListener {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
+		String filePath = null;
+		try {
+			filePath = TakeScreenshot_Of_Failure(result.getMethod().getMethodName(), driver);
+
+		} catch (Exception e) {
+			// TODO: handle exception
+		}
+
+		extentThread.get().addScreenCaptureFromPath(filePath, result.getMethod().getMethodName());
+	}
+
+	@Override
+	public void onTestSkipped(ITestResult result) {
+		// TODO Auto-generated method stub
+
+		extentThread.get().skip(result.getThrowable());
 
 	}
 
@@ -55,9 +71,4 @@ public class Listners extends BaseClass implements ITestListener {
 
 	}
 
-	@Override
-	public void onTestSkipped(ITestResult result) {
-		// TODO Auto-generated method stub
-
-	}
 }

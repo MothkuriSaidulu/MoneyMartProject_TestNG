@@ -5,6 +5,7 @@ import org.testng.annotations.Test;
 import PageObject.Page_004_DashBoardPage;
 import PageObject.Page_005_WelcomePage;
 import PageObject.Page_007_Verify_Your_Income_Page;
+import PageObject.Page_010_Employer_Info;
 import PageObject.Page_001_HomePage;
 import PageObject.Page_002_SignInPage;
 import PageObject.Page_003_SignUpPage;
@@ -14,10 +15,13 @@ public class TC01_SignUP_IL_Loan_Origination_Flow extends BaseClass {
 
 	@Test
 	public void signUp() throws Exception {
+
 //		browser and url takecare by base class
 
 		HomePageObject = new Page_001_HomePage(driver);
+
 //		HomePageObject.selectProvince();
+
 		HomePageObject.click_On_SignIn_SignUp();
 
 		SignInPageObject = new Page_002_SignInPage(driver);
@@ -34,30 +38,28 @@ public class TC01_SignUP_IL_Loan_Origination_Flow extends BaseClass {
 		SignUpPageObject.select_Security_Ans();
 		SignUpPageObject.set_Password();
 		SignUpPageObject.click_On_Create_Btn();
-		
+
 		DashBoardObject = new Page_004_DashBoardPage(driver);
 //		DashBoardObject.click_On_SignOut();
-		
-		
+
 		DashBoardObject.select_Installment_Loan();
-		
+
 		wellComeObject = new Page_005_WelcomePage(driver);
 		wellComeObject.select_Province();
 		wellComeObject.enter_Address();
 		wellComeObject.select_Rent();
 		wellComeObject.click_On_CheckBox();
 		wellComeObject.click_On_ContinueBtn();
-		
+
 		IncomePageObject = new Page_007_Verify_Your_Income_Page(driver);
 		IncomePageObject.select_Flinks_Income();
+
+		Employer_page_Object = new Page_010_Employer_Info(driver);
 		
-		
-		
-		
-		
-		
+// 		Employer_page_Object.Click_On_Continue();
+
 	}
-	
+
 //	@Test(dependsOnMethods = { "signUp"} )
 //	public void signInWithExsitingCustomer() throws Exception {
 //
@@ -73,6 +75,5 @@ public class TC01_SignUP_IL_Loan_Origination_Flow extends BaseClass {
 //		SignInPageObject.clickOnSignInBtn();
 //
 //	}
-
 
 }

@@ -80,8 +80,11 @@ public class Page_003_SignUpPage extends AbstractClass {
 	@FindBy(xpath = "//div[@class='mm-alert mm-alert--success']")
 	private WebElement successMessage;
 
+
+	
 // Actions
 	public void send_First_Name() throws IOException {
+	
 
 		enterText(firstName_txt, "jimm", "User trying To Enter First Name");
 	}

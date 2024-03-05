@@ -3,12 +3,12 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="Stepdefination.TC03_IL_Loan_Origination_Flow">
+      <class name="Stepdefination.TC02_SignIn_With_exsiting_Customer">
         <methods>
-          <include name="signUp"/>
+          <include name="signInWithExsitingCustomer"/>
           <include name="launchWebUrl"/>
         </methods>
-      </class> <!-- Stepdefination.TC03_IL_Loan_Origination_Flow -->
+      </class> <!-- Stepdefination.TC02_SignIn_With_exsiting_Customer -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

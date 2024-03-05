@@ -31,6 +31,9 @@ public class Page_002_SignInPage extends AbstractClass {
 	@FindBy(xpath = "//input[@name='password']")
 	private WebElement password;
 
+	@FindBy(css = "span[class*='mm-form-field__message']")
+	private WebElement SignIn_Error;
+	
 	@FindBy(css = "div.login_button_wrap")
 	private WebElement signInbtn;
 
@@ -39,7 +42,7 @@ public class Page_002_SignInPage extends AbstractClass {
 	@FindBy(xpath = "//div[@class='mm-page-loader__wrapper']")
 	private WebElement loader;
 
-// Actions
+// Actions 
 
 	public void click_On_SignUp() throws IOException {
 		waitForElementToBeVisible(signInPageTitle, "signInPageTitle");
@@ -68,7 +71,9 @@ public class Page_002_SignInPage extends AbstractClass {
 
 	public void click_On_SignIn_Btn() throws IOException {
 
-		click(signInbtn, "Click on Sign in button");
+		
+		click(signInbtn, "Click on Sign in button");		
+		
 
 	}
 

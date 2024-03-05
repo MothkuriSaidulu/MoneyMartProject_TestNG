@@ -35,7 +35,7 @@ public class Page_007_Verify_Your_Income_Page extends AbstractClass {
 
 	@FindBy(xpath = "//span[contains(text(),'Terms and Conditions')]/preceding-sibling::span")
 	private WebElement check_Box_One;
-
+// Unique X path when two same x paths besides
 	@FindBy(xpath = "//label[@class='mm-checkbox__label ']/preceding-sibling::label//span")
 	private WebElement check_Box_Two;
 

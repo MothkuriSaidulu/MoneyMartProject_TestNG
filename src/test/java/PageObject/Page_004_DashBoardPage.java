@@ -35,28 +35,41 @@ public class Page_004_DashBoardPage extends AbstractClass {
 	@FindBy(xpath = "//div[@class='mm-page-loader__wrapper']")
 	private WebElement loader;
 
+	@FindBy(css = "h3[class='mm-user-dash__headh2']")
+	private WebElement customer_First_Last_Name;
+
+	@FindBy(css = "span[class*='mm-form-field__message']")
+	private WebElement SignIn_Error;
+
 // Actions
 	public void click_On_SignOut() throws Exception {
 
 		waitForElementToBeVisible(signOut, "signOut");
 
 		click(signOut, "User Clicked On Sign Out Button");
-		
+
 	}
 
 	public void select_Installment_Loan() throws IOException, InterruptedException {
 
-		waitForElementToBeVisible(Installment, "Installment");
+		if (customer_First_Last_Name.isDisplayed()) {
+			System.out.println("User Successfully Sign In");
+			waitForElementToBeVisible(Installment, "Installment");
 
-		Thread.sleep(5000);
-		
-		click(Installment, "Select Installment Loan");
+			Thread.sleep(5000);
+
+			click(Installment, "Select Installment Loan");
+
+		} else {
+			waitForElementToBeVisible(SignIn_Error, "Sign in error msg");
+			System.out.println(SignIn_Error.getText());
+		}
+
 	}
 
 	public void select_Cash_Advance() throws IOException {
 
 		waitForElementToBeVisible(cashAdvance, "cashAdvance");
-
 
 		click(cashAdvance, "Select Cash Advance Loan");
 	}
